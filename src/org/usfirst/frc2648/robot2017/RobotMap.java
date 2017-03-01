@@ -94,11 +94,11 @@ public class RobotMap {
         
         driveTrainlEnc = new Encoder(3, 4, false, EncodingType.k4X);
         LiveWindow.addSensor("DriveTrain", "lEnc", driveTrainlEnc);
-        driveTrainlEnc.setDistancePerPulse(1.0/170);//170
+        driveTrainlEnc.setDistancePerPulse(1.0/170*3/3.2);//170
         driveTrainlEnc.setPIDSourceType(PIDSourceType.kDisplacement);
         driveTrainrEnc = new Encoder(5, 6, false, EncodingType.k4X);
         LiveWindow.addSensor("DriveTrain", "rEnc", driveTrainrEnc);
-        driveTrainrEnc.setDistancePerPulse(1.0/1955);
+        driveTrainrEnc.setDistancePerPulse(1.0/1955*3/3.2);
         driveTrainrEnc.setPIDSourceType(PIDSourceType.kDisplacement);
         shooterlShooter = new CANTalon(12);
         LiveWindow.addActuator("Shooter", "lShooter", shooterlShooter);

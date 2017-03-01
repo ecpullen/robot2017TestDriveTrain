@@ -11,29 +11,16 @@
 
 package org.usfirst.frc2648.robot2017;
 
-import org.usfirst.frc2648.robot2017.commands.ArcadeDrive;
-import org.usfirst.frc2648.robot2017.commands.AutonomousCommand;
-import org.usfirst.frc2648.robot2017.commands.ClimberOff;
 import org.usfirst.frc2648.robot2017.commands.ClimberOn;
 import org.usfirst.frc2648.robot2017.commands.DistDrive;
-import org.usfirst.frc2648.robot2017.commands.EncDrive;
-import org.usfirst.frc2648.robot2017.commands.EncDriveRev;
-import org.usfirst.frc2648.robot2017.commands.EncTurn;
+import org.usfirst.frc2648.robot2017.commands.DriveTurn;
 import org.usfirst.frc2648.robot2017.commands.FeedShooter;
-import org.usfirst.frc2648.robot2017.commands.GearFromBesideBoiler;
-import org.usfirst.frc2648.robot2017.commands.GearIn;
-import org.usfirst.frc2648.robot2017.commands.GearOut;
 import org.usfirst.frc2648.robot2017.commands.GyroTurn;
-import org.usfirst.frc2648.robot2017.commands.IntakeDown;
 import org.usfirst.frc2648.robot2017.commands.IntakeIn;
-import org.usfirst.frc2648.robot2017.commands.IntakeOut;
-import org.usfirst.frc2648.robot2017.commands.IntakeStop;
-import org.usfirst.frc2648.robot2017.commands.IntakeUp;
-import org.usfirst.frc2648.robot2017.commands.LockON;
+import org.usfirst.frc2648.robot2017.commands.PidDrive;
+import org.usfirst.frc2648.robot2017.commands.PidTurn;
 import org.usfirst.frc2648.robot2017.commands.ShootTest;
-import org.usfirst.frc2648.robot2017.commands.ShooterOn;
 import org.usfirst.frc2648.robot2017.commands.ShooterOnClose;
-import org.usfirst.frc2648.robot2017.commands.ShooterStop;
 import org.usfirst.frc2648.robot2017.commands.ToggleIntake;
 
 import edu.wpi.first.wpilibj.XboxController;
@@ -81,6 +68,11 @@ public class OI {
         SmartDashboard.putData("DistDrive(-6)",new DistDrive(-6));
         SmartDashboard.putData("DistDrive(2)", new DistDrive(2));
         SmartDashboard.putData("DistDrive(6) exact", new DistDrive(-(6-21/12)));
+        SmartDashboard.putData("PidDrive", new PidDrive(1.25,0,0,-3));
+        SmartDashboard.putData("PidDriveBack", new PidDrive(1.25,0,0,3));
+        SmartDashboard.putData("PidTurn", new PidTurn(.1,0,0,90));
+        SmartDashboard.putData("PidTurnRev", new PidTurn(.1,0,0,-90));
+        SmartDashboard.putData("DriveTurn", new DriveTurn());
         j1 = new XboxController(0);
         j2 = new XboxController(1);
         
