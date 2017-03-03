@@ -5,9 +5,6 @@
 
 	import edu.wpi.first.wpilibj.command.PIDCommand;
 
-	/**
-	 *
-	 */
 	public class PidDriveFull extends PIDCommand {
 
 		private double setpoint;

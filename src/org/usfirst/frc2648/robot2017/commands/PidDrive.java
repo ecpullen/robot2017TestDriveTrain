@@ -27,7 +27,7 @@ public class PidDrive extends PIDCommand {
 
     protected void usePIDOutput(double output) {
     	System.out.println(output);
-       Robot.driveTrain.arcadeDrive(output*3/4,(Robot.driveTrain.getGyro().getAngle())/7);
+       Robot.driveTrain.arcadeDrive(output,(Robot.driveTrain.getGyro().getAngle())/7);
     }
 
     // Called just before this Command runs the first time
@@ -48,12 +48,13 @@ public class PidDrive extends PIDCommand {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	//System.out.println(isTimedOut() + " " + (Robot.driveTrain.getlEnc().getDistance()-getSetpoint()));
-        return isTimedOut() && Math.abs(Robot.driveTrain.getlEnc().getDistance() - setpoint) < .1;
+        return isTimedOut() && Robot.driveTrain.getlEnc().getDistance() - setpoint < .3;
     	//return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	System.out.println("End PidDrive");
     }
 
     // Called when another command which requires one or more of the same
